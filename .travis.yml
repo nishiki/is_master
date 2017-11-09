@@ -1,0 +1,14 @@
+language: ruby
+dist: precise
+rvm:
+  - 2.4.2
+  - 2.3.5
+  - 2.2.8
+  - 2.1.10
+install:
+  - bundle install
+  - gem build is_master.gemspec
+  - gem install is_master-$(cat VERSION).gem
+script:
+  - rubocop
+  - ruby ./test/test_cli.rb
