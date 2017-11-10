@@ -10,4 +10,12 @@ class TestCli < Test::Unit::TestCase
     output = %x(is_master 127.0.0.1 echo 'GOOD!')
     assert_match('GOOD!', output)
   end
+
+  def test_missing_arg
+    output = %x(is_master 127.0.0.1)
+    assert_match('Usage: ', output)
+
+    output = %x(is_master)
+    assert_match('Usage: ', output)
+  end
 end
