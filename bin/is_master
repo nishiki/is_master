@@ -20,16 +20,17 @@ require 'socket'
 
 if ARGV.length < 2
   puts 'is_master execute a command when it determine that server is master'
-  puts "Usage: #{$PROGRAM_NAME} VIP COMMAND"
-  puts '  VIP - IP address expected to be master'
+  puts "Usage: #{$PROGRAM_NAME} [VIP|FILE] COMMAND"
+  puts '  VIP     - IP address expected to be master'
+  puts '  FILE    - File expected to be master'
   puts '  COMMAND - Command to execute if host is master'
   exit 2
 end
 
-vip = ARGV[0]
-command = ARGV[1..-1].join(' ')
+expected = ARGV[0]
+command  = ARGV[1..-1].join(' ')
 
-if Socket.ip_address_list.map(&:ip_address).include?(vip)
+if Socket.ip_address_list.map(&:ip_address).include?(expected) || File.exist?(expected)
   Kernel.exec(command)
 else
   puts 'OK - I am slave, i going to sleep'

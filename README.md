@@ -1,9 +1,9 @@
 # is_master
-[![Version](https://img.shields.io/badge/latest_version-1.0.0-green.svg)](https://github.com/nishiki/is_master/releases)
+[![Version](https://img.shields.io/badge/latest_version-1.1.0-green.svg)](https://github.com/nishiki/is_master/releases)
 [![Build Status](https://travis-ci.org/nishiki/is_master.svg?branch=master)](https://travis-ci.org/nishiki/is_master)
 [![License](https://img.shields.io/badge/license-Apache--2.0-blue.svg)](https://github.com/nishiki/is_master/blob/master/LICENSE)
 
-is_master execute a command when it determine that server is master
+is_master execute a command when on the machine there is the expected vip or file.
 
 ## Install
 
@@ -18,6 +18,10 @@ gem install is_master
 It's simple:
 ```
 is_master 10.0.254.2 ls -l
+```
+or
+```
+is_master /path/to/file ls -l
 ```
 
 ## Development
