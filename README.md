@@ -18,10 +18,14 @@ gem install is_master
 It's simple:
 ```
 is_master 10.0.254.2 ls -l
-```
-or
-```
 is_master /path/to/file ls -l
+is_slave 10.0.254.2 ls -l
+is_slave /path/to/file ls -l
+```
+
+Output is `ls -l` result or:
+```
+OK - I am slave, i going to sleep
 ```
 
 ## Development
