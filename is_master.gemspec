@@ -11,7 +11,7 @@ Gem::Specification.new do |spec|
   spec.license       = 'Apache-2.0'
 
   spec.files         = %x(git ls-files -z).split("\x0")
-  spec.executables   = ['is_master']
+  spec.executables   = %w[is_master is_slave]
   spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
   spec.require_paths = ['lib']
 

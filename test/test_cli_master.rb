@@ -1,6 +1,6 @@
 require 'test/unit'
 
-class TestCli < Test::Unit::TestCase
+class TestCliMaster < Test::Unit::TestCase
   def test_missing_arg
     output = %x(is_master 127.0.0.1)
     assert_match('Usage: ', output)
