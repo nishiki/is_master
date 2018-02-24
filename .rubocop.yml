@@ -6,10 +6,13 @@ AllCops:
     - Vagrantfile
   TargetRubyVersion: 2.3
 
+Gemspec/RequiredRubyVersion:
+  Enabled: false
+
 Naming/AccessorMethodName:
   Enabled: false
 
-Lint/RescueWithoutErrorClass:
+Style/RescueStandardError:
   Enabled: false
 
 Metrics/LineLength:
